@@ -2,6 +2,7 @@ package com.example.iterable;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Spliterator;
 
 public class Bag<T> implements Container<T>{
 
@@ -24,5 +25,16 @@ public class Bag<T> implements Container<T>{
     @Override
     public Iterator<T> iterator() {
         return bag.iterator();
+    }
+
+    @Override
+    public void forEach(){
+        bag.forEach(System.out::println);
+
+    }
+    @Override
+    public Spliterator<T> spliterator(){
+
+        return bag.spliterator();
     }
 }
